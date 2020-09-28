@@ -1,0 +1,19 @@
+<!--pages/run-list/index.wxml-->
+<view class="container">
+	<view class='display-space-between'>
+		<view></view>
+		<!-- <view>{{calendarTitle}}</view> -->
+		<view></view>
+	</view>
+	<view class="margin-top-xl text-lg">{{calendarTitle}}</view>
+	<view class='calendar-background display-space-between'>
+		<view class='calendar-item' wx:for-items="{{weeks}}" wx:for-item="item" wx:key="*item">{{item}}</view>
+		<view class='calendar-item {{item.current ? "":"text-gray"}} {{item.selected ? "text-red":""}}' wx:for-items="{{calendarDays}}" wx:for-item="item" wx:key="*item" wx:for-index="index" data-index='{{index}}' bindtap='clickDate'>
+			<view class="day">{{item.date}} {{dates[item.dateFormat]}}
+				<view class="after" wx:for="{{stepInfoList}}" wx:for-item="item2" wx:if="{{item2.date == item.dateFormat}}">{{item2.step}}</view>
+			</view>
+		</view>
+	</view>
+
+  <view class="h2" wx:if="{{step}}">今日步数：{{step}}</view>
+</view>

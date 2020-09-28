@@ -1,0 +1,22 @@
+/* pages/plan/share.wxss */
+page{background: var(--blue);}
+.model{position: fixed;top: 50%;left: 50%;width: 600rpx;height: 1000rpx;padding: 48rpx 56rpx;background: #ffffff;margin-top: -500rpx;margin-left: -300rpx;border-radius: 30rpx;padding-bottom: 28rpx;}
+.head_pic{position: fixed;top: 50%;left: 50%;width: 150rpx;height: 150rpx;margin-left: -75rpx;margin-top: -575rpx;border-radius: 100%;display: block;box-shadow: 0px 0px 40rpx rgb(73, 98, 252)}
+.title{color:var(--blue);margin-top: 40rpx;margin-bottom: 10rpx;font-weight: bolder;display:flex;justify-content: space-between;align-items: center;}
+.desc{color:var(--black);/*color: #afb8c5;*/max-height: 200rpx;display: block;overflow: auto;font-weight: 400;}
+.navigation{width: 50rpx;height: 50rpx;background:var(--white) ;border-radius: 100%;}
+
+
+
+
+/* 暗黑模式下应用的样式 */
+@media (prefers-color-scheme: dark) {
+  page{
+    background: #101010;
+    color: #ffffff;
+  }
+  .head_pic{box-shadow: 0px 0px 0 rgb(73, 98, 252)}
+  .desc{color:var(--white)}
+  .model{background: #202020;}
+
+}

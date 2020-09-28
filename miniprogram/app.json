@@ -1,0 +1,22 @@
+{
+  "pages": [
+    "pages/plan/plan",
+    "pages/plan/add",
+    "pages/plan/share"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "@navBackgroundColor",
+    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTextStyle": "@navTextStyle"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置"
+    }
+  },
+  "darkmode": true,
+  "themeLocation": "theme.json",
+  "sitemapLocation": "sitemap.json"
+}

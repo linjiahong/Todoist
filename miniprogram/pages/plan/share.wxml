@@ -1,0 +1,34 @@
+<view class="model">
+  <image class="head_pic"
+    src="https://thirdwx.qlogo.cn/mmopen/vi_32/BVs9dSN2WV9pW74xjgzrlpKlxMOk0Sj2OHibanicjhLH0yKicn4icTWBrbibasrzycgicglUBE82Jezkic6BsIMXWj2wg/132">
+  </image>
+
+  <view>
+    <view class="padding-top-xl text-center padding-bottom-sm" style="color: #afb8c5;">来自 “LIN” 的分享<view
+        class="padding-top-xs">帮你保持专注与高效的工具
+      </view>
+    </view>
+
+
+    <view class="title">名称</view>
+    <view class="desc">{{info.name}}</view>
+
+
+    <view class="title">时间</view>
+    <view class="desc">{{info.date}} {{info.time}}</view>
+
+    <view class="title">备注</view>
+    <text class="desc">{{info.description}}</text>
+
+
+    <view class="title" bindtap="openLocation" wx:if="{{info.address}}">位置<view class="desc"
+        style="width:350rpx;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;">{{info.address.address}}
+      </view>
+      <image class="navigation" src="http://cnd.hongblog.cn/portal/20200918/a1e400e28331f52278357675f13b05f5.png">
+      </image>
+    </view>
+  </view>
+  <navigator url="../plan/plan" hover-class="none">
+    <view class="padding-top-xl text-center" style="color: #afb8c5;">我也要制作</view>
+  </navigator>
+</view>

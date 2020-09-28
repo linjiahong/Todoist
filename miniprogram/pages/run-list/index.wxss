@@ -1,0 +1,60 @@
+/* pages/run-list/index.wxss */
+page{background: var(--white);}
+.container{padding:0 40rpx;}
+.h2{font-size: 50rpx;padding: 20rpx;margin-top: 30rpx;}
+.calendar-background {
+  padding-top: 20rpx;
+}
+
+.calendar-item {
+  width: 14%;
+  text-align: center;
+  margin-bottom: 10rpx;
+}
+
+.calendar-item .day{
+  width: 80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 5rpx auto;
+  position: relative;
+}
+
+
+.calendar-item .day .after{
+  content: '';
+  display: block;
+  font-size: 18rpx;
+  border-radius: 100%;
+  /* background: var(--blue); */
+  position: absolute;
+  bottom: 15rpx;
+  left: 0;
+  height: 20px;
+  width: 100%;
+  color: var(--blue);
+}
+
+.text-red .day{
+  background: var(--blue);
+  color: var(--white);
+  border-radius: 50rpx;
+}
+
+.text-red .day .after{
+  color: var(--white);
+}
+
+.display-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.text-gray {
+  color: #878787;
+}
+.text-red {
+  /* color: #F87474; */
+}

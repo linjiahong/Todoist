@@ -1,0 +1,55 @@
+<!--pages/plan/add.wxml-->
+
+<view class="status">
+	 {{info.status == 1 ? '已完成' : '待办'}} 
+	 <button open-type='share' class="share" wx:if="{{id}}">
+		<image src="http://cnd.hongblog.cn/portal/20200917/3d28f6624b00e414a94866392844d207.png"></image>
+	 </button>
+</view>
+<form role="form" class="form animation-slide-bottom" style="animation-delay: 0.3s;" bindsubmit="submit">
+	<view class="form-group">
+		<label for="name">名称</label>
+		<input type="text" class="form-control" name="name" id="name" placeholder="请输入" bindinput="input" value="{{info.name}}"/>
+	</view>
+	<view class="form-group">
+		<label for="name">日期</label>
+		<input hidden="true" name="date" placeholder="" value="{{info.date}}"/>
+    <picker mode="date" value="{{info.date}}" bindchange="DateChange">
+			<view class="picker">
+			  {{info.date || '请选择日期'}}
+			</view>
+		</picker>
+	</view>	
+	<view class="form-group">
+		<label for="name">时间</label>
+		<input hidden="true" name="time" placeholder="" value="{{info.time}}"/>
+    <picker mode="time" value="{{info.time}}" bindchange="TimeChange">
+			<view class="picker">
+			  {{info.time || '请选择时间'}}
+			</view>
+		</picker>
+	</view>
+
+	<view class="form-group">
+		<label for="name">分类</label>
+		<input type="text" class="form-control" name="category" id="category" placeholder="如：运动" bindinput="input" value="{{info.category}}"/>
+	</view>
+	<view class="form-group">
+		<label for="name" bindtap="openLocation">选择位置
+			<text class="cuIcon-location lg text-blue" wx:if="{{info.address.address}}"></text>
+		</label>
+		<view class="padding-tb-xs" bindtap="getLocation">{{info.address.address + info.address.name || '点击选择位置'}}</view>
+	</view>
+
+	<view class="form-group">
+		<label for="name">备注</label>
+		<!-- <input type="text"/> -->
+    <textarea class="form-control" name="description" maxlength="999999" id="description" placeholder="请输入" bindinput="input" value="{{info.description}}" style="height:200rpx;"></textarea>
+	</view>
+  <view class="text-center animation-slide-bottom" style="animation-delay: 0.8s;">
+    <view class="text-red "> {{error.msg}} </view>
+	  <button formType="submit" role="button" class="cu-btn bg-blue button-hover margin-lr-xs" bindtap="onSubscribe">保 存</button>
+	  <!-- <button class="cu-btn bg-blue button-hover margin-lr-xs" bindtap="onSubscribe">订阅消息</button> -->
+	  <view bindtap="del" class="margin-top-sm text-red padding" wx:if="{{id && info.status != 1}}" bindtap="del">删 除</view>
+  </view>
+</form>

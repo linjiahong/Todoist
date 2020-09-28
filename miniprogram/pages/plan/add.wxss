@@ -1,0 +1,33 @@
+/* pages/plan/add.wxss */
+page {background:var(--blue);}
+.status {font-size:64rpx;padding:5vh 2vh;color:var(--white);display:flex;justify-content: space-between;align-items: center;}
+.form {padding:0 100rpx;padding-top:3vh;background:var(--white);height:81vh;overflow:auto;border-radius:80rpx 80rpx 0 0;}
+.form-group {margin:20rpx 0;margin-bottom:0;}
+.form-group label {color:#afb8c5;}
+.form-group input {line-height:60rpx;height:60rpx;border-bottom:1px solid #efefef;}
+.form-group textarea {margin-top:20rpx;border-bottom:1px solid #efefef;}
+.form-group picker {width:100%;display:block;}
+.form-group picker .picker {line-height:80rpx;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;width:100%;text-align:left;font-family:UICTFontTextStyleBody;border-bottom:1px solid #efefef;}
+.cu-btn {width:240rpx;min-height:90rpx;margin-top:20rpx;}
+.share {width:50rpx;height:60rpx;padding: 0;margin: 0;}
+.share image{width:50rpx;height:50rpx;}
+
+
+/* 暗黑模式下应用的样式 */
+@media (prefers-color-scheme: dark) {
+  page{
+    background: #101010;
+    color: #ffffff;
+
+  }
+  .list .item, .list .item.completed, .form{
+    background-color: #202020;
+	}
+	.form-group input{border-bottom:1rpx solid rgba(239, 239, 239, 0.1) ;}
+	.form-group textarea {
+		border-bottom:1rpx solid rgba(239, 239, 239, 0.1);
+	}
+	.form-group picker .picker {
+		border-bottom:1rpx solid rgba(239, 239, 239, 0.1);
+	}
+}

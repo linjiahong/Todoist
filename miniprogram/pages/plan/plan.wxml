@@ -1,0 +1,62 @@
+<view class="container">
+	<view class='display-space-between'>
+		<view></view>
+		<!-- <view>{{calendarTitle}}</view> -->
+		<view></view>
+	</view>
+	<view class="margin-top-xl text-lg margin-bottom" bindtap="monthShow">{{calendarTitle}}
+		<text class="cuIcon-unfold lg"></text>
+	</view>
+
+	<scroll-view scroll-y="true" scroll-top="{{400}}" wx:if="{{month_show}}" class='option_box'
+		style="top:{{miss+60}}px;height:260px;">
+		<block wx:for='{{12}}' wx:key="index">
+			<view class="option {{selectDate.month == index+1?'cur':''}}" data-index='{{index}}' catchtap='bindMonth'>
+				{{months[index]}}</view>
+		</block>
+	</scroll-view>
+
+	<view class='calendar-background display-space-between'>
+		<view class='calendar-item' wx:for-items="{{weeks}}" wx:for-item="item" wx:key="*item">{{item}}</view>
+		<view class='calendar-item {{item.current ? "":"text-gray"}} {{item.selected ? "text-red":""}}'
+			wx:for-items="{{calendarDays}}" wx:for-item="item" wx:key="*item" wx:for-index="index" data-index='{{index}}'
+			bindtap='clickDate'>
+			<view class="day">{{item.date}} {{dates[item.dateFormat]}}
+				<view class="after" wx:for="{{dates}}" wx:for-item="item2" wx:if="{{item2 == item.dateFormat}}"></view>
+			</view>
+		</view>
+	</view>
+
+	<view class="h2">
+		<view class="flex">{{selectDate.month}}.{{selectDate.date}} 事项<view
+				class="text-sm margin-top-sm padding-left text-blue" bindtap="onToday">回到今天</view>
+		</view>
+		<navigator url="add" style="float: right;" hover-class="none">
+			<image src="http://cnd.hongblog.cn/portal/20200831/e7310d25f217c176a9f518ea92131e0c.png" class="btn-right">
+			</image>
+		</navigator>
+	</view>
+	<view class="list" wx:if="{{list.length > 0}}">
+		<view class="item {{item.status == 1? 'completed' :''}} animation-slide-bottom"
+			style="animation-delay: {{(index+1)*0.1}}s;" wx:for="{{list}}" wx:key="key" bindtap="edit" data-id="{{item._id}}">
+			<view class="t">{{item.name}}</view>
+			<view class="d">{{item.date}} {{item.time}}</view>
+			<view class="b">{{item.description}}</view>
+		</view>
+	</view>
+
+	<view wx:else>
+		<image src="http://cnd.hongblog.cn/portal/20200908/10b03f0264dd71e0db09d9547719e94f.png" class="noData"></image>
+		<view class="text-center">
+			<navigator url="add?selectDate={{selectDate.dateFormat}}" class="cu-btn bg-blue button-hover margin-lr-xs">添加事项
+			</navigator>
+		</view>
+	</view>
+
+
+	<view class="dong">
+		<button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="userinfo-avatar"
+			style="background-image: url({{avatarUrl || 'http://cnd.hongblog.cn/portal/20200913/a0a436e019e0374273c0c8fc3fcdc569.png'}})"
+			size="default"></button>
+	</view>
+</view>

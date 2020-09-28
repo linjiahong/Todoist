@@ -1,0 +1,21 @@
+{
+  "name": "miniprogram",
+  "version": "1.0.0",
+  "description": "这是云开发的快速启动指引，其中演示了如何上手使用云开发的三大基础能力：",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@miniprogram-i18n/core": "^1.0.0-rc.9",
+    "miniprogram-sm-crypto": "^0.1.2",
+    "wx-server-sdk": "^2.2.0"
+  },
+  "devDependencies": {
+    "@miniprogram-i18n/gulp-i18n-locales": "^1.0.0-rc.10",
+    "@miniprogram-i18n/gulp-i18n-wxml": "^1.0.0-rc.9",
+    "gulp": "^4.0.2"
+  }
+}
