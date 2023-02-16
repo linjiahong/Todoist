@@ -53,7 +53,7 @@
 
 ### 功能演示
 
-腾讯视频：https://v.qq.com/x/page/o3153jgt2cc.html
+腾讯视频：
 
 ### 团队简介
 
